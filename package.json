@@ -1,0 +1,22 @@
+{
+  "name": "wvupebayfront",
+  "version": "1.0.0",
+  "description": "This student project uses Node.js and builds upon ebay-api to provide one part of an aggregtor/wishlist app.\r It is frontend for the wvupEbayProvider (see repo).<br />\r ##Status\r Creating/building (Draft finding complete, cart functionality next)<br />\r ##Dependencies\r ebay-api<br />\r dotenv<br />\r ==<br />\r pug<br />\r express<br />\r ##TODO\r TODO: Basic building<br />\r TODO: Get frontend working<br />\r ONGOING: Test!<br />\r ##NOTES\r ebay-api:<br />\r https://github.com/benbuckman/nodejs-ebay-api<br />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattGable/wvupEbayFront.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattGable/wvupEbayFront/issues"
+  },
+  "homepage": "https://github.com/MattGable/wvupEbayFront#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0"
+  }
+}
