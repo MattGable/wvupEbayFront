@@ -11,7 +11,7 @@ pug<br />
 express<br />
 ##TODO
 DONE: Add needed dependencies (ebay-api, dotenv,body-parser, pug, express)<br />
-DONE: Bootstrap and JQuery
+DONE: Bootstrap and JQuery<br />
 DONE: Node, Express, Pug, JQuery, and JavaScript integrated into project<br />
 DONE: Build draft frontend form<br />
 TODO: Solve propogation issue<br />
