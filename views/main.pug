@@ -1,0 +1,30 @@
+extends layout
+
+block textTop 
+    .jumbotron
+        .row
+            .col-md-6 
+                h2 Please enter your search terms and price: 
+            .col-md-4
+                div.form-group
+                    label(for='searchLabel') Search Terms:
+                    input#name.form-control(type='text', placeholder='Please enter search term(s)')
+                    label(for='priceLabel') Price:
+                    input#price.form-control(type='text', placeholder='Please enter preferred price')
+                    label(for='textLabel') Output:
+                    textArea#output.form-control(type='text', placeholder='Results...')
+                div A new div
+                #search.btn.btn-primary Search eBay
+
+block scripts
+    script.
+        $('#search').on('click', function(){
+            console.log('clicked me!!');
+            //TODO
+            output.placeholder = 'hi';
+
+        $.post('/api/products/search', search, function(resp){
+            console.log(resp);
+            console.log('test?');
+        })
+        })               
