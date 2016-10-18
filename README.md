@@ -6,7 +6,7 @@ Creating/building (Draft finding complete, cart functionality next)<br />
 ##Dependencies
 ebay-api<br />
 dotenv<br />
-==<br />
+body-parser<br />
 pug<br />
 express<br />
 ##TODO
