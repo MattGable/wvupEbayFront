@@ -36,7 +36,7 @@ module.exports = function(name, price) {
             //return array
             var returnArray = [];
             for (var i = 0; i < items.length; i++) {
-                //Create a temp object in the first iteration
+                //Create a temp object each iteration
                 var tempObj = {
                         id: items[i].itemId,
                         name: items[i].title,
