@@ -22,9 +22,18 @@ block scripts
             console.log('clicked me!!');
             //TODO
             output.placeholder = 'hi';
+            output.innerHTML = 'this?'
 
         $.post('/api/products/search', search, function(resp){
             console.log(resp);
             console.log('test?');
         })
-        })               
+        }) 
+
+block testScripts
+    script.
+        function test(){
+            output.innerHTML = 'test';
+        };
+
+        test();
