@@ -13,6 +13,9 @@ express<br />
 TODO: Basic building<br />
 TODO: Get frontend working<br />
 ONGOING: Test!<br />
-##NOTES
+##Notes
 ebay-api:<br />
 https://github.com/benbuckman/nodejs-ebay-api<br />
+##References
+Main driver bason on in-class examples shown by A. Freeland on 10/12/2016 at WVUP.<br />
+Finding functions based on examples given by B. Buckman via ebay-api tutorials.<br />
