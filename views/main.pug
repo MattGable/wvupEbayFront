@@ -23,11 +23,21 @@ block scripts
             //TODO
             output.placeholder = 'hi';
             output.innerHTML = 'this?'
+            var val = $('#name').val();
+            output.innerHTML = val;
+            //TODO
+            //- return;
 
-        $.post('/api/products/search', search, function(resp){
-            console.log(resp);
-            console.log('test?');
-        })
+            var search = {
+                term: val
+            };
+
+            $.post('/api/products/search', search, function(resp){
+                console.log(resp);
+                console.log('test?');
+
+            });
+
         }) 
 
 block testScripts

@@ -21,6 +21,10 @@ app.get('/', function(req, res) {
     res.render('main');
 });
 
+app.post('/api/products/search', function(req, res) {
+    var _body = req.body;
+    res.send('works');
+});
 
 //Listen on port number in var port
 app.listen(port, function() {
