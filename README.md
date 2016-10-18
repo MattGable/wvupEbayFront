@@ -10,8 +10,16 @@ body-parser<br />
 pug<br />
 express<br />
 ##TODO
-TODO: Basic building<br />
-TODO: Get frontend working<br />
+DONE: Add needed dependencies (ebay-api, dotenv,body-parser, pug, express)<br />
+DONE: Bootstrap and JQuery
+DONE: Node, Express, Pug, JQuery, and JavaScript integrated into project<br />
+DONE: Build draft frontend form<br />
+TODO: Solve propogation issue<br />
+TODO: Refine frontend formatting<br />
+TODO: Complete form logic<br />
+TODO: Integrate find functionality<br />
+TODO: Finish  frontend<br />
+TODO: Refine output format<br />
 ONGOING: Test!<br />
 ##Notes
 ebay-api:<br />
