@@ -23,16 +23,20 @@ block scripts
             //TODO
             output.placeholder = 'hi';
             output.innerHTML = 'this?'
-            var val = $('#name').val();
-            output.innerHTML = val;
+            var nameVal = $('#name').val();
+            var priceVal = $('#price').val();
+            //output.innerHTML = nameVal;
+
             //TODO
             //- return;
 
-            var search = {
-                term: val
+            var returnSearchedName = {
+                name: nameVal,
+                price: priceVal
             };
+            output.innerHTML = returnSearchedName.name + " " + returnSearchedName.price;
 
-            $.post('/api/products/search', search, function(resp){
+            $.post('/api/products/search', returnSearchedName, function(resp){
                 console.log(resp);
                 console.log('test?');
 
