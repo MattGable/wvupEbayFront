@@ -25,8 +25,9 @@ app.get('/', function(req, res) {
 app.post('/api/products/search', function(req, res) {
     var _body = req.body;
 
-    find("r2d2", 50, function(err, itemList) {
+    find(req.body.name, req.body.price, function(err, itemList) {
         if (err) {
+            console.log('error in app post');
             return console.log('error');
         }
         console.log('res: ' + itemList);
