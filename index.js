@@ -31,7 +31,7 @@ app.post('/api/products/search', function(req, res) {
             return console.log('error');
         }
         console.log('res: ' + itemList);
-        res.send(ItemList);
+        res.send(itemList);
     });
 });
 

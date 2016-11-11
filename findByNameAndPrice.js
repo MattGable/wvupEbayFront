@@ -4,7 +4,7 @@ var ebay = require('ebay-api');
 require('dotenv').config();
 
 //Expose the finding function
-module.exports = function(name, price) {
+module.exports = function(name, price, callback) {
 
     //Find by name and price with results limited to two
     var parameters = {
@@ -53,7 +53,7 @@ module.exports = function(name, price) {
                 returnArray.push(tempObj);
             }
             console.log(returnArray);
-            return returnArray;
+            callback(null, returnArray);
         }
     );
 };
