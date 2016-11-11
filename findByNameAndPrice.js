@@ -1,6 +1,7 @@
 //Adapted from example by Ben Buckman
 //https://github.com/benbuckman/nodejs-ebay-api/blob/master/examples/Finding-FindItemsByKeywords.js
 var ebay = require('ebay-api');
+require('dotenv').config();
 
 //Expose the finding function
 module.exports = function(name, price) {
