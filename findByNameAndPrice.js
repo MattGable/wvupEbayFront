@@ -35,7 +35,10 @@ module.exports = function(name, price, callback) {
         },
         // Via Buckman: "gets all the items together in a merged array"
         function itemsCallback(error, itemsResponse) {
-            if (error) throw error;
+            if (error) {
+                callback(error);
+                return;
+            }
 
             var items = itemsResponse.searchResult.item;
 
