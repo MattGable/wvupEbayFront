@@ -3,9 +3,14 @@
 var ebay = require('ebay-api');
 require('dotenv').config();
 
+//https://www.gregjs.com/javascript/2015/how-to-scrape-the-web-gently-with-node-js/
+var http = require('http');
+var https = require('https');
+http.globalAgent.maxSockets = 1;
+https.globalAgent.maxSockets = 1;
+
 //Expose the finding function
 module.exports = function(name, price, callback) {
-
     //Find by name and price with results limited to two
     var parameters = {
 
