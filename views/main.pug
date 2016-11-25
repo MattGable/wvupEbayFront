@@ -5,7 +5,6 @@ block textTop
         .row
             .col-md-6 
                 h2 Please enter your search terms and price:
-                h2 test change 
             .col-md-4
                 div.form-group
                     label(for='searchLabel') Search Terms:
@@ -14,7 +13,6 @@ block textTop
                     input#price.form-control(type='text', placeholder='Please enter preferred price')
                     label(for='textLabel') Output:
                     textArea#output.form-control(type='text', placeholder='Results...')
-                div A new div
                 #search.btn.btn-primary Search eBay
         .row
             .col-md-12
@@ -41,8 +39,24 @@ block scripts
             $.post('/api/products/search', returnSearchedName, function(resp){
                 
                 console.log('resp[0].id: ' + resp[0].id);
-                //$('#outputDisplay').val("Adding new text!!!");
-                outputDisplay.innerHTML = resp[0].id;
+
+                for (i = 0; i < resp.length; i++)
+                {
+                    if (i === 0)
+                    {
+                        outputDisplay.innerHTML = "";
+                    }
+                    var insertHtml = "===========EBAY ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ID: " + resp[i].id + "\n";
+                    insertHtml += "NAME: " + resp[i].name + "\n";
+                    insertHtml += "PRICE" + resp[i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[i].category + "\n";
+                    insertHtml += "URL" + resp[i].url + "\n";
+                    insertHtml += "IMAGEURL" + resp[i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + resp[i].provider + "\n";
+                    outputDisplay.innerHTML += insertHtml;
+                }
+                
                 console.log('test?');
             });
 
