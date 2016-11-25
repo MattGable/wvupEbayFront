@@ -23,8 +23,6 @@ app.get('/', function(req, res) {
 });
 
 app.post('/api/products/search', function(req, res) {
-    //var _body = req.body;
-    //Why does this stop the call???
     find(req.body.name, req.body.price, function(err, itemList) {
         if (err) {
             console.log('error in app post');
