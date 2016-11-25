@@ -14,13 +14,14 @@ DONE: Add needed dependencies (ebay-api, dotenv,body-parser, pug, express)<br />
 DONE: Bootstrap and JQuery<br />
 DONE: Node, Express, Pug, JQuery, and JavaScript integrated into project<br />
 DONE: Build draft frontend form<br />
-TODO: Rescript script blocks<br />
-TODO: Solve propogation issue<br />
-TODO: Refine frontend formatting<br />
-TODO: Complete form logic<br />
-TODO: Integrate find functionality<br />
-TODO: Finish  frontend<br />
-TODO: Refine output format<br />
+DONE: Rescript script blocks<br />
+DONE: Solve propogation issue<br />
+DONE: Refine frontend formatting<br />
+DONE: Complete form logic<br />
+DONE: Integrate find functionality<br />
+DONE: Finish  frontend<br />
+DONE: Refine output format<br />
+TODO: Integrate other APIs<br />
 ONGOING: Test!<br />
 ##Notes
 ebay-api:<br />
