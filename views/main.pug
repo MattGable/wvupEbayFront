@@ -38,6 +38,8 @@ block scripts
 
             $.post('/api/products/search', returnSearchedName, function(resp){
                 
+                console.log('HELLLLLOOOOOO');
+                console.log('!!!!!!resp: ' + resp);
                 console.log('resp[0].id: ' + resp[0].id);
 
                 for (i = 0; i < resp.length; i++)

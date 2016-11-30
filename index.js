@@ -2,6 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var find = require('./findByNameAndPrice.js');
+var walmart = require("walmart");
+
+//Setting up Walmart API
+walmart.setApi(process.env.WALMART)
 
 //Listen on our specifed port or 3000
 var port = process.env.PORT || 3000;
@@ -23,14 +27,40 @@ app.get('/', function(req, res) {
 });
 
 app.post('/api/products/search', function(req, res) {
+    var totalResult = [];
+    var inputName = req.body.name;
+    var inputPrice = req.body.price;
+    var counter = 2;
     find(req.body.name, req.body.price, function(err, itemList) {
         if (err) {
-            console.log('error in app post');
+            console.log('error in app post ebay');
             res.send('error');
             return;
         }
         console.log('res object 0 id is: ' + itemList[0].id);
-        res.send(itemList);
+        totalResult.push(itemList);
+        counter--;
+        if (counter === 0) {
+            res.send(totalResult);
+        }
+    });
+    var walmartObject = {
+        searchTerm: inputName,
+        minPrice: 0,
+        maxPrice: inputPrice
+    }
+    walmart.search(walmartObject, function(err, itemList) {
+        if (err) {
+            console.log('error in app post walmart');
+            res.send('error');
+            return;
+        }
+        console.log('Walmart object 0 maxPrice is: ', +itemList[0].price)
+        totalResult.push(itemList);
+        counter--;
+        if (counter === 0) {
+            res.send(totalResult);
+        }
     });
 });
 
