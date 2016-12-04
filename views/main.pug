@@ -4,28 +4,25 @@ block textTop
     .jumbotron
         .row
             .col-md-6 
-                h2 Please enter your search terms and price:
+                h2 Please enter your search terms and price to search Ebay and Walmart APIs:
             .col-md-4
                 div.form-group
                     label(for='searchLabel') Search Terms:
                     input#name.form-control(type='text', placeholder='Please enter search term(s)')
                     label(for='priceLabel') Price:
                     input#price.form-control(type='text', placeholder='Please enter preferred price')
-                    label(for='textLabel') Output:
-                    textArea#output.form-control(type='text', placeholder='Results...')
-                #search.btn.btn-primary Search eBay
+                    label(for='textLabel') You entered:
+                    textArea#output.form-control(type='text', placeholder='Your Results...')
+                #search.btn.btn-primary Search
         .row
             .col-md-12
-                h2 Results page:
+                h2 Unformatted Results (resize as needed):
                 textArea#outputDisplay.form-control(type='text', placeholder='Formatted results displayed here...')
 
 block scripts
     script.
         $('#search').on('click', function(){
-            console.log('clicked me!!');
 
-            output.placeholder = 'hi';
-            output.innerHTML = 'this?'
             var nameVal = $('#name').val();
             var priceVal = $('#price').val();
 
@@ -34,40 +31,42 @@ block scripts
                 price: priceVal
             };
             output.innerHTML = returnSearchedName.name + " " + returnSearchedName.price;
-            outputDisplay.innerHTML = "clicked here!";
 
             $.post('/api/products/search', returnSearchedName, function(resp){
-                
-                console.log('HELLLLLOOOOOO');
-                console.log('!!!!!!resp: ' + resp);
-                console.log('resp[0].id: ' + resp[0].id);
 
-                for (i = 0; i < resp.length; i++)
+                var insertHtml;     
+                for (i = 0; i < resp[0].length; i++)
                 {
                     if (i === 0)
                     {
                         outputDisplay.innerHTML = "";
                     }
-                    var insertHtml = "===========EBAY ITEM #" + (i + 1) + "===========\n";
-                    insertHtml += "ID: " + resp[i].id + "\n";
-                    insertHtml += "NAME: " + resp[i].name + "\n";
-                    insertHtml += "PRICE" + resp[i].price + "\n";
-                    insertHtml += "CATEGORY" + resp[i].category + "\n";
-                    insertHtml += "URL" + resp[i].url + "\n";
-                    insertHtml += "IMAGEURL" + resp[i].imageUrl;
-                    insertHtml += "PROVIDED BY: " + resp[i].provider + "\n";
+                    insertHtml = "===========EBAY ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ID: " + resp[0][i].id + "\n";
+                    insertHtml += "NAME: " + resp[0][i].name + "\n";
+                    insertHtml += "PRICE" + resp[0][i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[0][i].category + "\n";
+                    insertHtml += "URL" + resp[0][i].url + "\n";
+                    insertHtml += "IMAGEURL" + resp[0][i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + resp[0][i].provider + "\n";
                     outputDisplay.innerHTML += insertHtml;
                 }
-                console.log('test?');
+                for (i = 0; i < resp[1].length; i++)
+                {
+                    if (i === 0)
+                    {
+                        outputDisplay.innerHTML += "/n";
+                    }
+                    var insertHtml = "===========WALMART ITEM #" + (i + 1) + "===========\n";
+                    insertHtml += "ID: " + resp[1][i].id + "\n";
+                    insertHtml += "NAME: " + resp[1][i].name + "\n";
+                    insertHtml += "PRICE" + resp[1][i].price + "\n";
+                    insertHtml += "CATEGORY" + resp[1][i].category + "\n";
+                    insertHtml += "URL" + resp[1][i].url + "\n";
+                    insertHtml += "IMAGEURL" + resp[1][i].imageUrl;
+                    insertHtml += "PROVIDED BY: " + resp[1][i].provider + "\n";
+                    outputDisplay.innerHTML += insertHtml;
+                }
             });
-
         }) 
 
-block testScripts
-    script.
-
-        function test(){
-            output.innerHTML = 'Changing inner HTML';
-        };
-
-        test();
