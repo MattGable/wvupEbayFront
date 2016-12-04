@@ -21,7 +21,8 @@ DONE: Complete form logic<br />
 DONE: Integrate find functionality<br />
 DONE: Finish  frontend<br />
 DONE: Refine output format<br />
-TODO: Integrate other APIs<br />
+DONE: Integrate APIs (1 of 2)<br />
+DONE: Get other results collected in a final wishlist application<br />
 ONGOING: Test!<br />
 ##Notes
 ebay-api:<br />
